@@ -17,7 +17,7 @@ const displaySearchResult = (infos) => {
     if (infos == 0) {
         const p = document.createElement('p');
         p.classList.add('mx-auto');
-        p.innerHTML = `<p class="text-center text-danger">No Phone Matched With This Name!!!</p>`;
+        p.innerHTML = `<p class="text-center text-danger fw-bold">No phone matched with this name!!!<br>Please enter a valid name!</p>`;
         searchResult.appendChild(p);
     }
     else {
@@ -50,7 +50,7 @@ const showPhoneDetails = (phoneSlug) => {
 
 // display phone details
 const displayPhoneDetails = (details) => {
-    console.log(details);
+    // console.log(details);
     const phoneDetails = document.getElementById('phone-details');
     const div = document.createElement('div');
     div.classList.add('card');
