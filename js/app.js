@@ -50,9 +50,13 @@ const displayPhoneDetails = (details) => {
     <img src="${details.image}" class="card-img-top w-50 p-4 text-center mx-auto" alt="...">
         <hr class="ms-2 me-2">
         <div class="card-body">
-            <h5 class="card-title">${details.name}</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <p class="card-text"></p>
+            <h3 class="card-title">${details.name}</h3>
+            <p class="card-text"><small class="text-muted">Release Date: ${details.releaseDate}</small></p>
+            <p class="card-text text-primary">Display size: ${details.mainFeatures.displaySize}</p>
+            <p class="card-text text-primary">Chip set: ${details.mainFeatures.chipSet}</p>
+            <p class="card-text text-primary">Memory: ${details.mainFeatures.memory}</p>
+            <p class="card-text text-primary">Storage: ${details.mainFeatures.storage}</p>
+            <p class="card-text text-primary">Sensors: ${details.mainFeatures.sensors}</p>
         </div>
     `;
     phoneDetails.appendChild(div);
