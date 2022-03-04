@@ -12,7 +12,9 @@
 </head>
 
 <body class="bg-dark bg-opacity-10">
-    <h1 class="text-center text-primary m-4">Smart Phone Information</h1>
+
+    <h1 class="text-center text-primary m-4">Search Your Phone</h1>
+
     <!-- searchbox and button -->
     <div class="input-group mx-auto w-25">
         <input type="text" class="form-control rounded shadow mt-2" id="search-field"
@@ -20,6 +22,11 @@
         <button onclick="searchPhone()" type="submit" class="btn btn-primary ms-2 mt-2 rounded shadow"
             id="button-search">Search</button>
     </div>
+
+    <!-- phone details -->
+    <div id="phone-details" class="mb-3 w-50 mx-auto mt-4 rounded-3 shadow">
+    </div>
+
     <!-- search result -->
     <div id="search-result" class="row row-cols-1 row-cols-md-3 g-4 p-5">
     </div>
