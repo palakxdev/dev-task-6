@@ -14,21 +14,30 @@ const searchPhone = () => {
 const displaySearchResult = (infos) => {
     const searchResult = document.getElementById('search-result');
     searchResult.textContent = '';
-    infos.forEach(info => {
-        // console.log(info);
-        const div = document.createElement('div');
-        div.innerHTML = `
-            <div class="card h-100 rounded-3 shadow">
-                <img src="${info.image}" class="card-img-top w-auto p-5" alt="...">
-                <div class="card-body">
-                    <h2 class="card-title">${info.phone_name}</h2>
-                    <p class="card-text text-secondary fw-bold">${info.brand}</p>
-                    <button onclick="showPhoneDetails('${info.slug}')" class="btn btn-primary d-grid col-12" type="button">See More Details</button>
+    if (infos == 0) {
+        const p = document.createElement('p');
+        p.classList.add('mx-auto');
+        p.innerHTML = `<p class="text-center text-danger">No Phone Matched With This Name!!!</p>`;
+        searchResult.appendChild(p);
+    }
+    else {
+        infos.forEach(info => {
+            // console.log(info);
+            const div = document.createElement('div');
+            div.innerHTML = `
+                <div class="card h-100 rounded-3 shadow">
+                    <img src="${info.image}" class="card-img-top w-auto p-5" alt="...">
+                    <div class="card-body">
+                        <h2 class="card-title">${info.phone_name}</h2>
+                        <p class="card-text text-secondary fw-bold">${info.brand}</p>
+                        <button onclick="showPhoneDetails('${info.slug}')" class="btn btn-primary d-grid col-12" type="button">See More Details</button>
+                    </div>
                 </div>
-            </div>
-        `;
-        searchResult.appendChild(div);
-    })
+            `;
+            searchResult.appendChild(div);
+        })
+    }
+
 }
 
 // get details button response
